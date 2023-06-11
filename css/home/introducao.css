@@ -68,3 +68,13 @@
     width: 100%;
   }
 }
+
+@media (max-width: 600px) {
+  .introducao img {
+    display: none;
+  }
+  .introducao-bg {
+    background-color: var(--cor-12);
+    box-shadow: unset;
+  }
+}
