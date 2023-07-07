@@ -16,15 +16,19 @@
   background-color: var(--cor-1);
 }
 
-.perguntas dt {
+.perguntas button {
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 0.5rem;
   align-items: center;
   cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
 }
 
-.perguntas dt::before {
+.perguntas button::before {
   content: "";
   display: inline-block;
   width: 0.75rem;
@@ -32,7 +36,7 @@
   background-color: var(--cor-p1);
 }
 
-.perguntas dt::after {
+.perguntas button::after {
   content: "";
   display: inline-block;
   width: 0.85rem;
@@ -41,14 +45,22 @@
   transition: 0.3s;
 }
 
-.perguntas dt:hover::after {
+.perguntas button:hover::after,
+.perguntas button[aria-expanded="true"]::after {
   transform: rotate(180deg);
 }
 
 .perguntas dd {
+  display: none;
   padding-left: 1.25rem;
   padding-top: 1rem;
   max-width: 80ch;
+  transition: display 0.3s ease;
+}
+
+.perguntas dd.ativa {
+  display: block;
+  transition: display 0.3s ease-in;
 }
 
 @media (max-width: 800px) {
